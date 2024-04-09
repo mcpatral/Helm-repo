@@ -5,10 +5,11 @@ label: myapp1
 # Image variable
 image:
   name: myapp1-container
-  repository: ghcr.io/stacksimplify/kubenginx
+  repository: mcpatralrepo.azurecr.io
+  imageName: webapp
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "4.0.0"
+  tag: "2.0"
 
 # Service variables
 service:
