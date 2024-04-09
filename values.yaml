@@ -1,1 +1,19 @@
-docker pull ghcr.io/stacksimplify/kubenginx:4.0.0
+# Default values for adoagent.
+replicaCount: 1
+label: myapp1
+
+# Image variable
+image:
+  name: myapp1-container
+  repository: ghcr.io/stacksimplify/kubenginx
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "4.0.0"
+
+# Service variables
+service:
+  type: NodePort
+  port: 80
+  nodePort: 31300
+
+
