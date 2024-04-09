@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata: 
+  name: {{ .Release.Name }}-nginx
+spec: 
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.label }}
+  template:  
+    metadata:
+      name: {{ .Values.label }}-pod
+      labels: 
+        app: {{ .Values.label }}  
+    spec:
+      containers: 
+        - name: {{ .Values.image.name }}
+          image: {{ .Values.image.repository }} #:{{ .Values.image.tag }}
+          pullPolicy: {{ .Values.image.pullPolicy }}
+          ports: 
+            - containerPort: {{ .Values.service.port }}

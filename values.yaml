@@ -1,0 +1,1 @@
+docker pull ghcr.io/stacksimplify/kubenginx:4.0.0
